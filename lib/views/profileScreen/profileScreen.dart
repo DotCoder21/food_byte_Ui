@@ -3,8 +3,12 @@ import 'package:food_bytes/Data/data.dart';
 import 'package:food_bytes/utils/appColors.dart';
 import 'package:food_bytes/utils/appConst.dart';
 import 'package:food_bytes/views/profileScreen/reviewAndFollowerContainer.dart';
+import 'package:food_bytes/views/profileScreen/settingScreen.dart';
 import 'package:food_bytes/widgets/restaurentCardListView.dart';
 import 'package:get/get.dart';
+
+import 'FollowerScreen.dart';
+import 'FollowingScreen.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -23,14 +27,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: Column(
               children: [
                 SizedBox(
-                  height: Get.height * 0.02,
+                  height: Get.height * 0.03,
                 ),
                 Text(
-                  'Profile',
+                  'My Profile',
                   style: kTextStyle.copyWith(
                       color: kDarkTextColor,
                       fontSize: 30,
-                      fontWeight: FontWeight.w500),
+                      fontWeight: FontWeight.w600),
                 ),
                 SizedBox(
                   height: Get.height * 0.02,
@@ -44,7 +48,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   style: kTextStyle.copyWith(
                       color: kDarkTextColor,
                       fontSize: 25,
-                      fontWeight: FontWeight.w500),
+                      fontWeight: FontWeight.w600),
                 ),
                 Text(
                   'john.williams@gmail.com',
@@ -67,7 +71,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         thickness: 0.7,
                       ),
                     ),
-                    reviewAndFollowerContainer('250', 'Followers'),
+                    InkWell(
+                        onTap: () {
+                          Get.to(() => FollowerScreen());
+                        },
+                        child: reviewAndFollowerContainer('250', 'Followers')),
                     Container(
                       height: Get.height * 0.05,
                       child: VerticalDivider(
@@ -75,7 +83,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         thickness: 0.7,
                       ),
                     ),
-                    reviewAndFollowerContainer('250', 'Following'),
+                    InkWell(
+                        onTap: () {
+                          Get.to(() => FollowingScreen());
+                        },
+                        child: reviewAndFollowerContainer('250', 'Following')),
                   ],
                 ),
                 Container(
@@ -109,7 +121,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             border:
                                 Border.all(color: kTextColor.withOpacity(0.3))),
                         child: FlatButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.to(() => SettingScreen());
+                            },
                             child: Text(
                               'Settings',
                               style: kTextStyle.copyWith(
