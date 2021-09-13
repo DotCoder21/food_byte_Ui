@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_bytes/Data/data.dart';
 import 'package:food_bytes/utils/appColors.dart';
 import 'package:food_bytes/utils/appConst.dart';
+import 'package:food_bytes/views/profileScreen/ReviewScreen.dart';
 import 'package:food_bytes/views/profileScreen/reviewAndFollowerContainer.dart';
 import 'package:food_bytes/views/profileScreen/settingScreen.dart';
 import 'package:food_bytes/widgets/restaurentCardListView.dart';
@@ -63,7 +64,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    reviewAndFollowerContainer('250', 'Review'),
+                    InkWell(
+                        onTap: () {
+                          Get.to(() => ReviewScreen());
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (c) => ReviewScreen()));
+                        },
+                        child: reviewAndFollowerContainer('250', 'Review')),
                     Container(
                       height: Get.height * 0.05,
                       child: VerticalDivider(

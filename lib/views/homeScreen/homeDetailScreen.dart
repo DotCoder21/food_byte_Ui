@@ -4,11 +4,11 @@ import 'package:flutter_svg/svg.dart';
 import 'package:food_bytes/Data/data.dart';
 import 'package:food_bytes/utils/appColors.dart';
 import 'package:food_bytes/utils/appConst.dart';
-import 'package:food_bytes/views/homeScreen/ratingContainer.dart';
 import 'package:food_bytes/views/homeScreen/typeAndDistance.dart';
 import 'package:get/get.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 
+import '../../widgets/ratingContainer.dart';
 import 'customTextRow.dart';
 
 class HomeDetailScreen extends StatefulWidget {

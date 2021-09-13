@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:food_bytes/utils/appColors.dart';
 import 'package:food_bytes/utils/appConst.dart';
+import 'package:food_bytes/views/auth/sign_Up.dart';
 import 'package:food_bytes/views/profileScreen/ChangeLanguage.dart';
 import 'package:food_bytes/widgets/buildAppBar.dart';
 import 'package:get/get.dart';
@@ -30,8 +31,7 @@ class _SettingScreenState extends State<SettingScreen> {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   'Account',
-                  style:
-                      kTextStyle.copyWith(color: kDarkTextColor, fontSize: 20),
+                  style: kTextStyle.copyWith(color: kTextColor, fontSize: 20),
                 ),
               ),
             ),
@@ -54,15 +54,16 @@ class _SettingScreenState extends State<SettingScreen> {
               trailing: Icon(Icons.arrow_forward_ios),
             ),
             Container(
-              padding: EdgeInsets.only(top: 13, left: 15),
+              padding: EdgeInsets.only(left: 15),
               height: Get.height * 0.05,
               width: Get.width,
               color: kTextColor.withOpacity(0.2),
               child: Align(
                 alignment: Alignment.centerLeft,
-                child: Text('Others',
-                    style: kTextStyle.copyWith(
-                        color: kDarkTextColor, fontSize: 20)),
+                child: Text(
+                  'Other',
+                  style: kTextStyle.copyWith(color: kTextColor, fontSize: 20),
+                ),
               ),
             ),
             ListTile(
@@ -76,6 +77,23 @@ class _SettingScreenState extends State<SettingScreen> {
                   style:
                       kTextStyle.copyWith(color: kDarkTextColor, fontSize: 20)),
               trailing: Icon(Icons.arrow_forward_ios),
+            ),
+            ListTile(
+              onTap: () {
+                Get.defaultDialog(
+                  title: 'Are you want to log out',
+                  textCustom: 'Yes',
+                  textCancel: 'No',
+                  onConfirm: () {
+                    Get.back();
+                  },
+                  onCancel: () {
+                    Get.to(() => SignUpScreen());
+                  },
+                );
+              },
+              leading: Text('Log Out',
+                  style: kTextStyle.copyWith(color: kBlue, fontSize: 20)),
             ),
           ],
         ),

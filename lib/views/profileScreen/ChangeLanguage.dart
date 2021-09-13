@@ -17,6 +17,8 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
       appBar: buildAppBar(title: 'Change Language', color: kDarkTextColor),
       body: SafeArea(
         child: Container(
+          height: Get.height,
+          width: Get.width,
           child: Column(
             children: [
               Container(
@@ -37,35 +39,34 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                   leading: Text(
                     'Chines',
                     style: kTextStyle.copyWith(
-                        color: kDarkTextColor, fontSize: 20),
+                        color: isCheck ? kBlue : kDarkTextColor,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500),
                   ),
-                  trailing: Align(
-                    alignment: Alignment.bottomRight,
-                    child: InkWell(
-                      onTap: () {
-                        setState(() {
-                          isCheck = !isCheck;
-                        });
-                      },
-                      child: Container(
-                          height: Get.height * 0.034,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: isCheck ? kBlue : Colors.transparent,
-                            border: Border.all(color: kTextColor),
-                          ),
-                          child: isCheck
-                              ? Icon(
-                                  Icons.check,
-                                  size: 24,
-                                  color: Colors.white,
-                                )
-                              : Icon(
-                                  Icons.check_box_outline_blank,
-                                  size: 24,
-                                  color: Colors.white,
-                                )),
-                    ),
+                  trailing: InkWell(
+                    onTap: () {
+                      setState(() {
+                        isCheck = !isCheck;
+                      });
+                    },
+                    child: Container(
+                        height: Get.height * 0.034,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: isCheck ? kBlue : Colors.transparent,
+                          border: Border.all(color: kTextColor),
+                        ),
+                        child: isCheck
+                            ? Icon(
+                                Icons.check,
+                                size: 24,
+                                color: Colors.white,
+                              )
+                            : Icon(
+                                Icons.check_box_outline_blank,
+                                size: 24,
+                                color: Colors.white,
+                              )),
                   )),
             ],
           ),

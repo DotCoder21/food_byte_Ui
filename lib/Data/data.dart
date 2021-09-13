@@ -3,6 +3,7 @@ import 'package:food_bytes/models/categoryModel.dart';
 import 'package:food_bytes/models/customerReviewModel.dart';
 import 'package:food_bytes/models/notificationModel.dart';
 import 'package:food_bytes/models/recipiesModel.dart';
+import 'package:food_bytes/models/reviewModel.dart';
 
 List avatarModel = [
   'assets/images/person4.jpg',
@@ -122,4 +123,22 @@ List<NotificationModel> notificationModel = [
       title: 'Faheem Rahman',
       subtitle: 'Start following you',
       time: '5:30 am'),
+];
+
+List<ReviewModel> reviewModel = [
+  ReviewModel(
+      image: 'assets/images/person9.jpg',
+      name: 'Faheem Rahman',
+      title: 'I like this food the is very delicious, I recommend to you',
+      rating: '2.3'),
+  ReviewModel(
+      image: 'assets/images/person10.jpg',
+      name: 'Asad',
+      title: 'I like this food the is very delicious, I recommend to you',
+      rating: '4.3'),
+  ReviewModel(
+      image: 'assets/images/person4.jpg',
+      name: 'Osama',
+      title: 'I like this food the is very delicious, I recommend to you',
+      rating: '1.2'),
 ];
