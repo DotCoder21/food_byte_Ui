@@ -28,7 +28,7 @@ Widget displayTextField({
           fontWeight: FontWeight.w600),
       enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: Colors.grey.withOpacity(0.4))),
+          borderSide: BorderSide(color: Colors.grey.withOpacity(0.25))),
       focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
           borderSide: BorderSide(color: Colors.black12)),

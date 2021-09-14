@@ -3,6 +3,7 @@ import 'package:food_bytes/Data/data.dart';
 import 'package:food_bytes/utils/appColors.dart';
 import 'package:food_bytes/utils/appConst.dart';
 import 'package:food_bytes/views/profileScreen/ReviewScreen.dart';
+import 'package:food_bytes/views/profileScreen/editProfileScreen.dart';
 import 'package:food_bytes/views/profileScreen/reviewAndFollowerContainer.dart';
 import 'package:food_bytes/views/profileScreen/settingScreen.dart';
 import 'package:food_bytes/widgets/restaurentCardListView.dart';
@@ -112,7 +113,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           height: Get.height * 0.07,
                           width: Get.width * 0.4,
                           child: FlatButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.to(() => EditProfileScreen());
+                            },
                             child: Text(
                               'Edit Profile',
                               textAlign: TextAlign.center,
@@ -157,7 +160,80 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       physics: BouncingScrollPhysics(),
                       itemCount: recipiesModel.length,
                       itemBuilder: (context, i) {
-                        return restaurantCardListView(i);
+                        return InkWell(
+                            onTap: () {
+                              showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return Dialog(
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(
+                                              20.0)), //this right here
+                                      child: Container(
+                                        height: 200,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(12.0),
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                  'Are you Sure you want to\ndelete the post?',
+                                                  textAlign: TextAlign.center,
+                                                  style: kTextStyle.copyWith(
+                                                      fontSize: 20,
+                                                      color: kDarkTextColor,
+                                                      fontWeight:
+                                                          FontWeight.w600)),
+                                              SizedBox(
+                                                height: Get.height * 0.03,
+                                              ),
+                                              Divider(
+                                                color: Colors.grey,
+                                                thickness: 1,
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  TextButton(
+                                                      onPressed: () {
+                                                        //  Get.to(() => SignUpScreen());
+                                                      },
+                                                      child: Text(
+                                                        'Yes',
+                                                        style:
+                                                            kTextStyle.copyWith(
+                                                                fontSize: 20,
+                                                                color: kBlue),
+                                                      )),
+                                                  VerticalDivider(
+                                                    color: Colors.grey,
+                                                    thickness: 2,
+                                                  ),
+                                                  TextButton(
+                                                    onPressed: () {
+                                                      Get.back();
+                                                    },
+                                                    child: Text('No',
+                                                        style:
+                                                            kTextStyle.copyWith(
+                                                                fontSize: 20,
+                                                                color: kBlue)),
+                                                  )
+                                                ],
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  });
+                            },
+                            child: restaurantCardListView(i,context));
                       }),
                 ),
               ],

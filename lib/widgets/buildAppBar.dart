@@ -3,8 +3,14 @@ import 'package:food_bytes/utils/appColors.dart';
 import 'package:food_bytes/utils/appConst.dart';
 import 'package:get/get.dart';
 
-PreferredSize buildAppBar(
-    {String title, Color color, IconData actionIcon1, IconData actionIcon2}) {
+PreferredSize buildAppBar({
+  String title,
+  Color color,
+  IconData actionIcon1,
+  IconData actionIcon2,
+  // String title2,
+  // Color titleColor
+}) {
   return PreferredSize(
     preferredSize: Size.fromHeight(Get.height * 0.07),
     child: Align(
@@ -49,6 +55,14 @@ PreferredSize buildAppBar(
               color: kDarkTextColor,
             ),
           ),
+          // Padding(
+          //   padding: const EdgeInsets.only(right: 10, top: 15),
+          //   child: Text(title2,
+          //       style: kTextStyle.copyWith(
+          //           color: titleColor,
+          //           fontSize: Get.height * 0.023,
+          //           fontWeight: FontWeight.bold)),
+          // ),
         ],
       ),
     ),

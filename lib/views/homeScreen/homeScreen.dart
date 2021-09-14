@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_bytes/Data/data.dart';
 import 'package:food_bytes/utils/appColors.dart';
 import 'package:food_bytes/utils/appConst.dart';
+import 'package:food_bytes/views/filterScreen/filterScreen.dart';
 import 'package:food_bytes/views/trendingRestaurants/trendingRestaurants.dart';
 import 'package:food_bytes/widgets/displayTextField.dart';
 import 'package:food_bytes/widgets/restaurentCardListView.dart';
@@ -34,10 +35,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: displayTextField(
-                    suffixIcon: Icon(
-                      Icons.add_road,
-                      color: kTextColor,
-                      size: 25,
+                    suffixIcon: InkWell(
+                      onTap: () {
+                        Get.to(() => FilterScreen());
+                      },
+                      child: Icon(
+                        Icons.add_road,
+                        color: kTextColor,
+                        size: 25,
+                      ),
                     ),
                     prefixIcon: Icon(
                       Icons.search,
@@ -70,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       physics: BouncingScrollPhysics(),
                       itemCount: recipiesModel.length,
                       itemBuilder: (context, i) {
-                        return restaurantCardListView(i);
+                        return restaurantCardListView(i, context);
                       }),
                 ),
                 SizedBox(

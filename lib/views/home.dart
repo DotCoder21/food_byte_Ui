@@ -4,6 +4,7 @@ import 'package:food_bytes/utils/appColors.dart';
 import 'package:food_bytes/views/homeScreen/homeScreen.dart';
 import 'package:food_bytes/views/myFavoriteScreen/myFavoriteScreen.dart';
 import 'package:food_bytes/views/notificationScreen/notificatoinScreen.dart';
+import 'package:food_bytes/views/profileScreen/editReviewScreen.dart';
 import 'package:food_bytes/views/profileScreen/profileScreen.dart';
 
 class Home extends StatefulWidget {
@@ -18,6 +19,7 @@ class _HomeState extends State<Home> {
     MyFavoriteScreen(),
     NotificationScreen(),
     ProfileScreen(),
+    EditReviewScreen(),
   ];
   @override
   Widget build(BuildContext context) {

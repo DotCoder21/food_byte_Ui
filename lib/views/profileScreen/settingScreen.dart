@@ -80,17 +80,97 @@ class _SettingScreenState extends State<SettingScreen> {
             ),
             ListTile(
               onTap: () {
-                Get.defaultDialog(
-                  title: 'Are you want to log out',
-                  textCustom: 'Yes',
-                  textCancel: 'No',
-                  onConfirm: () {
-                    Get.back();
-                  },
-                  onCancel: () {
-                    Get.to(() => SignUpScreen());
-                  },
-                );
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return Dialog(
+                        shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(20.0)), //this right here
+                        child: Container(
+                          height: 200,
+                          child: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text('Are you Sure you want to\nLog out?',
+                                    textAlign: TextAlign.center,
+                                    style: kTextStyle.copyWith(
+                                        fontSize: 20,
+                                        color: kDarkTextColor,
+                                        fontWeight: FontWeight.w600)),
+                                SizedBox(
+                                  height: Get.height * 0.03,
+                                ),
+                                Divider(
+                                  color: Colors.grey,
+                                  thickness: 1,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    TextButton(
+                                        onPressed: () {
+                                          Get.to(() => SignUpScreen());
+                                        },
+                                        child: Text(
+                                          'Yes',
+                                          style: kTextStyle.copyWith(
+                                              fontSize: 20, color: kBlue),
+                                        )),
+                                    VerticalDivider(
+                                      color: Colors.grey,
+                                      thickness: 2,
+                                    ),
+                                    TextButton(
+                                      onPressed: () {
+                                        Get.back();
+                                      },
+                                      child: Text('No',
+                                          style: kTextStyle.copyWith(
+                                              fontSize: 20, color: kBlue)),
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      );
+                    });
+
+                // showDialog(
+                //   context: context,
+                //   builder: (BuildContext context) {
+                //     return AlertDialog(
+                //       title: Text("Alert Dialog"),
+                //       content: Text("Dialog Content"),
+                //     );
+                //   },
+                //   actions: [
+                //     // ignore: deprecated_member_use
+                //     FlatButton(
+                //       child: Text("Close"),
+                //       onPressed: () {
+                //         Navigator.of(context).pop();
+                //       },
+                //     )
+                //   ],
+                // );
+                // Get.defaultDialog(
+                //   title: 'Are you want to log out',
+                //   textCustom: 'Yes',
+                //   textCancel: 'No',
+                //   onConfirm: () {
+                //     Get.back();
+                //   },
+                //   onCancel: () {
+                //     Get.to(() => SignUpScreen());
+                //   },
+                // );
               },
               leading: Text('Log Out',
                   style: kTextStyle.copyWith(color: kBlue, fontSize: 20)),

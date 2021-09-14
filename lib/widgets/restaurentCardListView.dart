@@ -3,9 +3,10 @@ import 'package:food_bytes/Data/data.dart';
 import 'package:food_bytes/utils/appColors.dart';
 import 'package:food_bytes/utils/appConst.dart';
 import 'package:food_bytes/views/homeScreen/typeAndDistance.dart';
+import 'package:food_bytes/views/profileScreen/editReviewScreen.dart';
 import 'package:get/get.dart';
 
-Padding restaurantCardListView(int i) {
+Padding restaurantCardListView(int i, BuildContext context) {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
     child: Container(
@@ -112,9 +113,9 @@ Padding restaurantCardListView(int i) {
                   title: recipiesModel[i].distance,
                   color: Color(0xff848DFF),
                   isGri: false),
-              SizedBox(
-                width: Get.width * 0.05,
-              ),
+              // SizedBox(
+              //   width: Get.width * 0.05,
+              // ),
               // OverlapAvatar(
               //     insideRadius: 4,
               //     outSideRadius: 2,
@@ -123,6 +124,66 @@ Padding restaurantCardListView(int i) {
               //     backgroundImage:
               //         AssetImage('assets/images/pic1.png'),
               //     backgroundColor: Colors.white),
+              InkWell(
+                  onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return Dialog(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(
+                                    20.0)), //this right here
+                            child: Container(
+                              height: 200,
+                              child: Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    TextButton(
+                                        onPressed: () {
+                                          Get.to(() => EditReviewScreen());
+                                        },
+                                        child: Text(
+                                          'Edit',
+                                          style: kTextStyle.copyWith(
+                                              fontSize: 20,
+                                              color: kDarkTextColor),
+                                        )),
+                                    Divider(
+                                      color: Colors.grey,
+                                      thickness: 1,
+                                    ),
+                                    TextButton(
+                                      onPressed: () {
+                                        Get.back();
+                                      },
+                                      child: Text('Delete',
+                                          style: kTextStyle.copyWith(
+                                              fontSize: 20,
+                                              color: kDarkTextColor)),
+                                    ),
+                                    Divider(
+                                      color: Colors.grey,
+                                      thickness: 1,
+                                    ),
+                                    TextButton(
+                                      onPressed: () {
+                                        Get.back();
+                                      },
+                                      child: Text('Cancel',
+                                          style: kTextStyle.copyWith(
+                                              fontSize: 20, color: kTextColor)),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        });
+                  },
+                  child: Icon(Icons.more_vert)),
             ],
           ),
           Padding(

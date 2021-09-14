@@ -36,7 +36,7 @@ class _MyFavoriteScreenState extends State<MyFavoriteScreen> {
                     physics: BouncingScrollPhysics(),
                     itemCount: recipiesModel.length,
                     itemBuilder: (context, i) {
-                      return restaurantCardListView(i);
+                      return restaurantCardListView(i, context);
                     }),
               ),
             ],
