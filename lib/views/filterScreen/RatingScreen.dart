@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_bytes/utils/appColors.dart';
 import 'package:food_bytes/utils/appConst.dart';
+import 'package:food_bytes/views/homeScreen/findFriendScreen.dart';
 import 'package:food_bytes/widgets/buildAppBar.dart';
 import 'package:get/get.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
@@ -43,11 +44,16 @@ class _RatingScreenState extends State<RatingScreen> {
           color: kBlue,
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(30), topRight: Radius.circular(30))),
-      child: Center(
-        child: Text(
-          'Done',
-          style: kTextStyle.copyWith(
-              fontSize: 20, color: Colors.white, fontWeight: FontWeight.w600),
+      child: InkWell(
+        onTap: () {
+          Get.to(() => FindFriendScreen());
+        },
+        child: Center(
+          child: Text(
+            'Done',
+            style: kTextStyle.copyWith(
+                fontSize: 20, color: Colors.white, fontWeight: FontWeight.w600),
+          ),
         ),
       ),
     );

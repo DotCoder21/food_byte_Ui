@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_bytes/Data/data.dart';
 import 'package:food_bytes/utils/appColors.dart';
 import 'package:food_bytes/utils/appConst.dart';
+import 'package:food_bytes/views/categoryScreen/categoryScreen.dart';
 import 'package:food_bytes/views/filterScreen/filterScreen.dart';
 import 'package:food_bytes/views/trendingRestaurants/trendingRestaurants.dart';
 import 'package:food_bytes/widgets/displayTextField.dart';
@@ -20,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: Color(0xffFFFFFF),
         body: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
@@ -65,11 +67,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       child:
                           customTextRow('Trending Restaurant', 'See all (45)')),
                 ),
-                SizedBox(
-                  height: Get.height * 0.03,
-                ),
                 Container(
-                  margin: EdgeInsets.only(left: Get.width * 0.02),
+                  margin: EdgeInsets.only(
+                      left: Get.width * 0.02,
+                      top: Get.height * 0.03,
+                      bottom: Get.height * 0.015),
                   height: Get.height * 0.31,
                   child: ListView.builder(
                       scrollDirection: Axis.horizontal,
@@ -79,18 +81,17 @@ class _HomeScreenState extends State<HomeScreen> {
                         return restaurantCardListView(i, context);
                       }),
                 ),
-                SizedBox(
-                  height: Get.height * 0.015,
-                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: customTextRow('Category', 'See all (9)'),
-                ),
-                SizedBox(
-                  height: Get.height * 0.01,
+                  child: InkWell(
+                      onTap: () {
+                        Get.to(() => CategoryScreen());
+                      },
+                      child: customTextRow('Category', 'See all (9)')),
                 ),
                 Container(
-                  margin: EdgeInsets.only(left: Get.width * 0.022),
+                  margin: EdgeInsets.only(
+                      left: Get.width * 0.022, top: Get.height * 0.01),
                   height: Get.height * 0.13,
                   // width: Get.width * 0.3,
                   child: ListView.builder(
@@ -143,15 +144,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         );
                       }),
                 ),
-                SizedBox(
-                  height: Get.height * 0.01,
-                ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: customTextRow('Friends', 'See all (9)'),
-                ),
-                SizedBox(
-                  height: Get.height * 0.01,
                 ),
                 Container(
                   height: Get.height * 0.07,

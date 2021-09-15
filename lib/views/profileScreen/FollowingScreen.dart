@@ -11,7 +11,7 @@ class FollowingScreen extends StatefulWidget {
 }
 
 class _FollowingScreenState extends State<FollowingScreen> {
-  bool isFollower = false;
+  bool isFollowing = false;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class _FollowingScreenState extends State<FollowingScreen> {
         child: ListView.builder(
             itemCount: notificationModel.length,
             itemBuilder: (context, i) {
-              return userFollowersListTiles(i, isFollower);
+              return userFollowersListTiles(i, isFollowing);
             }),
       ),
     );

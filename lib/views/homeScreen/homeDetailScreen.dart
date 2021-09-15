@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:food_bytes/Data/data.dart';
 import 'package:food_bytes/utils/appColors.dart';
 import 'package:food_bytes/utils/appConst.dart';
+import 'package:food_bytes/views/homeScreen/menuAndPhotos.dart';
 import 'package:food_bytes/views/homeScreen/typeAndDistance.dart';
 import 'package:get/get.dart';
 import 'package:glassmorphism/glassmorphism.dart';
@@ -248,7 +249,12 @@ class _HomeDetailScreenState extends State<HomeDetailScreen> {
                           SizedBox(
                             height: Get.height * 0.01,
                           ),
-                          customTextRow('Menu and Photos', 'See all (12)'),
+                          InkWell(
+                              onTap: () {
+                                Get.to(() => MenuAndPhotos());
+                              },
+                              child: customTextRow(
+                                  'Menu and Photos', 'See all (12)')),
                         ],
                       ),
                     ],

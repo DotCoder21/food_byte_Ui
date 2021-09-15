@@ -11,6 +11,14 @@ List avatarModel = [
   'assets/images/person7.jpg',
   'assets/images/person9.jpg',
 ];
+List images = [
+  'assets/images/Vegitable.png',
+  'assets/images/register_bg.png',
+  'assets/images/SplashImage.png',
+  'assets/images/Recipe1.png',
+  'assets/images/chineesFood.jpg',
+  'assets/images/italinFood.jpg',
+];
 List<CategoryModel> categoryModel = [
   CategoryModel(
       title: 'Chines',
@@ -29,6 +37,26 @@ List<CategoryModel> categoryModel = [
       color2: Colors.purple),
   CategoryModel(
       title: 'Pakistani',
+      image: 'assets/images/Recipe1.png',
+      color1: Colors.indigoAccent,
+      color2: Colors.indigo),
+  CategoryModel(
+      title: 'Thai',
+      image: 'assets/images/chineesFood.jpg',
+      color1: Colors.orangeAccent,
+      color2: Colors.orange),
+  CategoryModel(
+      title: 'Arabic',
+      image: 'assets/images/italinFood.jpg',
+      color1: Colors.greenAccent,
+      color2: Colors.green),
+  CategoryModel(
+      title: 'Indian',
+      image: 'assets/images/maxicanFood.jpg',
+      color1: Colors.purpleAccent,
+      color2: Colors.purple),
+  CategoryModel(
+      title: 'American',
       image: 'assets/images/Recipe1.png',
       color1: Colors.indigoAccent,
       color2: Colors.indigo),
