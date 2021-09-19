@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_bytes/utils/appColors.dart';
 import 'package:food_bytes/utils/appConst.dart';
@@ -10,7 +11,19 @@ class ChangeLanguage extends StatefulWidget {
 }
 
 class _ChangeLanguageState extends State<ChangeLanguage> {
-  bool isCheck = false;
+  String selectedLang = "";
+
+  List<String> languages = [
+    'Chines',
+    'Hindi',
+    'Urdu',
+    'Pashto',
+    'Arabic',
+    'Russian',
+    'Japanese',
+    'French',
+    'Spanish',
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,39 +48,54 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                   ),
                 ),
               ),
-              ListTile(
-                  leading: Text(
-                    'Chines',
-                    style: kTextStyle.copyWith(
-                        color: isCheck ? kBlue : kDarkTextColor,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  trailing: InkWell(
-                    onTap: () {
-                      setState(() {
-                        isCheck = !isCheck;
-                      });
-                    },
-                    child: Container(
-                        height: Get.height * 0.034,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: isCheck ? kBlue : Colors.transparent,
-                          border: Border.all(color: kTextColor),
-                        ),
-                        child: isCheck
-                            ? Icon(
-                                Icons.check,
-                                size: 24,
-                                color: Colors.white,
-                              )
-                            : Icon(
-                                Icons.check_box_outline_blank,
-                                size: 24,
-                                color: Colors.white,
-                              )),
-                  )),
+              Expanded(
+                child: Container(
+                  height: Get.height,
+                  child: ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      itemCount: languages.length,
+                      itemBuilder: (context, i) {
+                        return ListTile(
+                            leading: Text(
+                              languages[i],
+                              style: kTextStyle.copyWith(
+                                  color: (selectedLang == languages[i])
+                                      ? kBlue
+                                      : kDarkTextColor,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                            trailing: InkWell(
+                              onTap: () {
+                                setState(() {
+                                  // isCheck = !isCheck;
+                                  selectedLang = languages[i];
+                                });
+                              },
+                              child: Container(
+                                  height: Get.height * 0.034,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: (selectedLang == languages[i])
+                                        ? kBlue
+                                        : Colors.transparent,
+                                    border: Border.all(color: kTextColor),
+                                  ),
+                                  child: (selectedLang == languages[i])
+                                      ? Icon(
+                                          Icons.check,
+                                          size: 24,
+                                          color: Colors.white,
+                                        )
+                                      : Icon(
+                                          Icons.check_box_outline_blank,
+                                          size: 24,
+                                          color: Colors.white,
+                                        )),
+                            ));
+                      }),
+                ),
+              )
             ],
           ),
         ),

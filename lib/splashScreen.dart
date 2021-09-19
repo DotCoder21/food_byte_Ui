@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
           // color: AppColor.violetColor,
           image: DecorationImage(
               image: AssetImage(
-                'assets/images/SplashImage.png',
+                'assets/images/splashimage.jpg',
               ),
               fit: BoxFit.cover)),
       child: Center(

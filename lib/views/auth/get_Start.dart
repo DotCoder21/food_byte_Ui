@@ -6,6 +6,7 @@ import 'package:food_bytes/utils/appConst.dart';
 import 'package:food_bytes/widgets/background_Image.dart';
 import 'package:food_bytes/widgets/customButton.dart';
 import 'package:get/get.dart';
+import 'package:glassmorphism/glassmorphism.dart';
 
 import '../home.dart';
 
@@ -42,19 +43,39 @@ class _GetStartScreenState extends State<GetStartScreen> {
                     },
                     child: Align(
                       alignment: Alignment.topRight,
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white38,
-                            borderRadius: BorderRadius.circular(16)),
-                        height: Get.height * 0.05,
+                      child: GlassmorphicContainer(
+                        blur: 5,
+                        border: 2,
                         width: Get.width * 0.2,
-                        child: Center(
-                          child: Text(
-                            'Skip',
-                            style: kTextStyle.copyWith(
-                                color: Colors.white,
-                                fontSize: Get.height * 0.026,
-                                fontWeight: FontWeight.w600),
+                        height: Get.height * 0.057,
+                        borderRadius: 15,
+                        borderGradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.topRight,
+                            colors: [
+                              Colors.white54.withOpacity(0.01),
+                              Colors.white54.withOpacity(0.01),
+                            ]),
+                        linearGradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.topRight,
+                            colors: [
+                              Colors.white70.withOpacity(0.1),
+                              Colors.white70.withOpacity(0.1),
+                            ]),
+                        child: Container(
+                          // decoration: BoxDecoration(
+                          //     borderRadius: BorderRadius.circular(16)),
+                          height: Get.height * 0.05,
+                          width: Get.width * 0.2,
+                          child: Center(
+                            child: Text(
+                              'Skip',
+                              style: kTextStyle.copyWith(
+                                  color: Colors.white,
+                                  fontSize: Get.height * 0.026,
+                                  fontWeight: FontWeight.w600),
+                            ),
                           ),
                         ),
                       ),

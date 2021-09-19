@@ -22,7 +22,7 @@ List images = [
 List<CategoryModel> categoryModel = [
   CategoryModel(
       title: 'Chines',
-      image: 'assets/images/chineesFood.jpg',
+      image: 'assets/images/chines.jpeg',
       color1: Colors.orangeAccent,
       color2: Colors.orange),
   CategoryModel(
@@ -37,12 +37,12 @@ List<CategoryModel> categoryModel = [
       color2: Colors.purple),
   CategoryModel(
       title: 'Pakistani',
-      image: 'assets/images/Recipe1.png',
+      image: 'assets/images/pakistani.jpeg',
       color1: Colors.indigoAccent,
       color2: Colors.indigo),
   CategoryModel(
       title: 'Thai',
-      image: 'assets/images/chineesFood.jpg',
+      image: 'assets/images/thai.jpeg',
       color1: Colors.orangeAccent,
       color2: Colors.orange),
   CategoryModel(
@@ -66,7 +66,7 @@ List<RecipiesModel> recipiesModel = [
   RecipiesModel(
     title: 'Happy Bones',
     subTitle: '394 Broome St, New York, NY 10013, USA',
-    image: 'assets/images/Recipe1.png',
+    image: 'assets/images/food2.jpeg',
     option: 'Open',
     type: 'Italian',
     distance: '1.2 km',
@@ -75,7 +75,7 @@ List<RecipiesModel> recipiesModel = [
   RecipiesModel(
     title: 'Uncle Boons',
     subTitle: '7 Spring St, New York, NY 10012, USA',
-    image: 'assets/images/chineesFood.jpg',
+    image: 'assets/images/pakistani.jpeg',
     option: 'Open',
     type: 'Italian',
     distance: '1.2 km',
@@ -84,7 +84,7 @@ List<RecipiesModel> recipiesModel = [
   RecipiesModel(
     title: 'Uncle Boons',
     subTitle: '7 Spring St, New York, NY 10012, USA',
-    image: 'assets/images/chineesFood.jpg',
+    image: 'assets/images/food1.jpeg',
     option: 'Open',
     type: 'Italian',
     distance: '1.2 km',

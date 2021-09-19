@@ -27,7 +27,7 @@ class _SignInScreenState extends State<SignInScreen> {
     return Stack(
       children: [
         BackgroundImage(
-          image: 'assets/images/login_bg.png',
+          image: 'assets/images/Loginimage.jpg',
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
@@ -99,8 +99,10 @@ class _SignInScreenState extends State<SignInScreen> {
                       style: kTextStyle,
                     ),
                     decoration: BoxDecoration(
-                        border: Border(
-                            bottom: BorderSide(width: 1, color: kWhite))),
+                      border: Border(
+                        bottom: BorderSide(width: 1, color: kWhite),
+                      ),
+                    ),
                   ),
                 ),
                 SizedBox(

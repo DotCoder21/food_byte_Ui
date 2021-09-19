@@ -25,13 +25,6 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _list[index],
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () {
-          // Overlay.of(context).insert(entry);
-        },
-      ),
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
         notchMargin: 4.0,
@@ -49,8 +42,10 @@ class _HomeState extends State<Home> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               IconButton(
-                icon: SvgPicture.asset('assets/icons/home.svg'),
-                color: index == 0 ? kNavIconColor : Colors.green,
+                icon: SvgPicture.asset(
+                  'assets/icons/home.svg',
+                  color: index == 0 ? kNavIconColor : Colors.grey,
+                ),
                 onPressed: () {
                   setState(() {
                     index = 0;
@@ -58,8 +53,10 @@ class _HomeState extends State<Home> {
                 },
               ),
               IconButton(
-                icon: SvgPicture.asset('assets/icons/path.svg'),
-                color: index == 1 ? kNavIconColor : Colors.white,
+                icon: SvgPicture.asset(
+                  'assets/icons/path.svg',
+                  color: index == 1 ? kNavIconColor : Colors.grey,
+                ),
                 onPressed: () {
                   setState(() {
                     index = 1;
@@ -67,8 +64,10 @@ class _HomeState extends State<Home> {
                 },
               ),
               IconButton(
-                icon: SvgPicture.asset('assets/icons/notification.svg'),
-                color: index == 2 ? kNavIconColor : Colors.green,
+                icon: SvgPicture.asset(
+                  'assets/icons/notification.svg',
+                  color: index == 2 ? kNavIconColor : Colors.grey,
+                ),
                 onPressed: () {
                   setState(() {
                     index = 2;
@@ -76,8 +75,10 @@ class _HomeState extends State<Home> {
                 },
               ),
               IconButton(
-                icon: SvgPicture.asset('assets/icons/profile.svg'),
-                color: index == 3 ? kNavIconColor : Colors.green,
+                icon: SvgPicture.asset(
+                  'assets/icons/profile.svg',
+                  color: index == 3 ? kNavIconColor : Colors.grey,
+                ),
                 onPressed: () {
                   setState(() {
                     index = 3;

@@ -35,15 +35,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   'My Profile',
                   style: kTextStyle.copyWith(
                       color: kDarkTextColor,
-                      fontSize: 30,
+                      fontSize: 25,
                       fontWeight: FontWeight.w600),
                 ),
                 SizedBox(
-                  height: Get.height * 0.02,
+                  height: Get.height * 0.04,
                 ),
-                CircleAvatar(
-                  radius: Get.height * 0.065,
-                  backgroundImage: AssetImage('assets/images/person6.jpg'),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Container(
+                    child: Image.asset(
+                      'assets/images/person6.jpg',
+                      width: Get.width * 0.25,
+                    ),
+                  ),
+                ),
+                // CircleAvatar(
+                //   radius: Get.height * 0.065,
+                //   backgroundImage: AssetImage('assets/images/person6.jpg'),
+                // ),
+                SizedBox(
+                  height: Get.height * 0.03,
                 ),
                 Text(
                   'John Williams',
@@ -56,7 +68,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   'john.williams@gmail.com',
                   style: kTextStyle.copyWith(
                     color: kTextColor,
-                    fontSize: 16,
+                    fontSize: 15,
                   ),
                 ),
                 SizedBox(
@@ -77,41 +89,41 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Container(
                       height: Get.height * 0.05,
                       child: VerticalDivider(
-                        color: kTextColor,
-                        thickness: 0.7,
+                        color: kTextColor.withOpacity(0.3),
+                        thickness: 2,
                       ),
                     ),
                     InkWell(
                         onTap: () {
                           Get.to(() => FollowerScreen());
                         },
-                        child: reviewAndFollowerContainer('250', 'Followers')),
+                        child: reviewAndFollowerContainer('100K', 'Followers')),
                     Container(
                       height: Get.height * 0.05,
                       child: VerticalDivider(
-                        color: kTextColor,
-                        thickness: 0.7,
+                        color: kTextColor.withOpacity(0.3),
+                        thickness: 2,
                       ),
                     ),
                     InkWell(
                         onTap: () {
                           Get.to(() => FollowingScreen());
                         },
-                        child: reviewAndFollowerContainer('250', 'Following')),
+                        child: reviewAndFollowerContainer('30', 'Following')),
                   ],
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: Get.height * 0.03),
+                  margin: EdgeInsets.symmetric(vertical: Get.height * 0.02),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Material(
                         borderRadius: BorderRadius.circular(8),
                         color: kBlue,
-                        elevation: 3,
+                        elevation: 2,
                         child: Container(
-                          height: Get.height * 0.07,
-                          width: Get.width * 0.4,
+                          height: Get.height * 0.065,
+                          width: Get.width * 0.37,
                           child: FlatButton(
                             onPressed: () {
                               Get.to(() => EditProfileScreen());
@@ -120,9 +132,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               'Edit Profile',
                               textAlign: TextAlign.center,
                               style: kTextStyle.copyWith(
-                                  fontSize: Get.height * 0.025,
+                                  letterSpacing: 1,
+                                  fontSize: Get.height * 0.023,
                                   color: Colors.white,
-                                  fontWeight: FontWeight.w500),
+                                  fontWeight: FontWeight.w600),
                             ),
                           ),
                         ),
@@ -131,27 +144,30 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
                             border:
-                                Border.all(color: kTextColor.withOpacity(0.3))),
+                                Border.all(color: kTextColor.withOpacity(0.2))),
                         child: FlatButton(
                             onPressed: () {
                               Get.to(() => SettingScreen());
                             },
                             child: Text(
                               'Settings',
+                              textAlign: TextAlign.center,
                               style: kTextStyle.copyWith(
+                                  letterSpacing: 1,
                                   color: kTextColor,
                                   fontSize: Get.height * 0.025,
                                   fontWeight: FontWeight.w600),
                             )),
-                        height: Get.height * 0.07,
-                        width: Get.width * 0.4,
+                        height: Get.height * 0.065,
+                        width: Get.width * 0.37,
                       ),
                     ],
                   ),
                 ),
-                Divider(
-                  thickness: 1,
-                ),
+                // Divider(
+                //   color: Colors.black12,
+                //   thickness: 2,
+                // ),
                 Container(
                   //  margin: EdgeInsets.only(left: Get.width * 0.02),
                   height: Get.height * 1,

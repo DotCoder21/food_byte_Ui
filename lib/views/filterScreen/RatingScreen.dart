@@ -25,14 +25,19 @@ class _RatingScreenState extends State<RatingScreen> {
       ),
       body: Column(
         children: [
-          Flexible(
-            flex: 10,
-            child: firstPart(context),
-          ),
-          Flexible(
-            flex: 1,
-            child: secondPart(),
-          ),
+          // Flexible(
+          //   flex: 10,
+          //   child:
+          Expanded(child: firstPart(context)),
+          // ),
+          // Flexible(
+          //   flex: 1,
+          //   child:
+
+          Container(
+            height: 60,
+              child: secondPart()),
+          // ),
         ],
       ),
     );

@@ -27,12 +27,21 @@ class _ReviewScreenState extends State<ReviewScreen> {
                 child: Container(
                   width: Get.width,
                   child: ListTile(
-                    leading: CircleAvatar(
-                      backgroundImage: AssetImage(
-                        reviewModel[i].image,
+                    leading: ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Container(
+                        child: Image.asset(
+                          reviewModel[i].image,
+                          width: Get.width * 0.16,
+                        ),
                       ),
-                      radius: 30,
                     ),
+                    // CircleAvatar(
+                    //   backgroundImage: AssetImage(
+                    //     reviewModel[i].image,
+                    //   ),
+                    //   radius: 30,
+                    // ),
                     title: Text(
                       reviewModel[i].name,
                       style: kTextStyle.copyWith(

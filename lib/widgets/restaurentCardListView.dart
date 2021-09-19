@@ -6,9 +6,13 @@ import 'package:food_bytes/views/homeScreen/typeAndDistance.dart';
 import 'package:food_bytes/views/profileScreen/editReviewScreen.dart';
 import 'package:get/get.dart';
 
-Padding restaurantCardListView(int i, BuildContext context) {
+Widget restaurantCardListView(
+  int i,
+  BuildContext context,
+) {
+  bool ischeck = false;
   return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+    padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
     child: Container(
       height: Get.height * 0.31,
       width: Get.width * 0.86,
@@ -37,61 +41,45 @@ Padding restaurantCardListView(int i, BuildContext context) {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Material(
-                    borderRadius: BorderRadius.circular(8),
-                    elevation: 4,
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(8)),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                      child: Text(
-                        recipiesModel[i].option,
-                        style: TextStyle(
-                            color: Colors.green, fontWeight: FontWeight.w600),
-                      ),
+                Material(
+                  borderRadius: BorderRadius.circular(8),
+                  elevation: 0.2,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                            bottomRight: Radius.circular(8),
+                            topLeft: Radius.circular(8))),
+                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    child: Text(
+                      recipiesModel[i].option,
+                      style: TextStyle(
+                          color: Colors.green, fontWeight: FontWeight.w600),
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Material(
-                    borderRadius: BorderRadius.circular(8),
-                    elevation: 4,
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(8)),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                      child: Row(
-                        children: [
-                          Image.asset(
-                            'assets/images/star.png',
-                            height: Get.height * 0.019,
+                InkWell(
+                  onTap: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: ischeck
+                        ? Icon(
+                            Icons.favorite_border,
+                            size: Get.height * 0.034,
+                            color: Colors.red,
+                          )
+                        : Icon(
+                            Icons.favorite,
+                            size: Get.height * 0.034,
+                            color: Colors.red,
                           ),
-                          SizedBox(
-                            width: Get.width * 0.01,
-                          ),
-                          Text(
-                            recipiesModel[i].rating,
-                            style: TextStyle(
-                                color: kDarkTextColor,
-                                fontWeight: FontWeight.w600),
-                          ),
-                        ],
-                      ),
-                    ),
                   ),
                 ),
               ],
             ),
           ),
           SizedBox(
-            height: Get.height * 0.02,
+            height: Get.height * 0.01,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -104,26 +92,29 @@ Padding restaurantCardListView(int i, BuildContext context) {
                   color: kDarkTextColor,
                 ),
               ),
+              Row(
+                children: [
+                  Image.asset(
+                    'assets/images/star.png',
+                    height: Get.height * 0.015,
+                  ),
+                  SizedBox(
+                    width: Get.width * 0.01,
+                  ),
+                  Text(
+                    recipiesModel[i].rating,
+                    style: TextStyle(
+                        fontSize: Get.height * 0.014,
+                        color: kDarkTextColor,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ],
+              ),
               typeAndDistance(
                   color1: Color(0xffFF864D),
                   color2: Color(0xffFF606B),
                   title: recipiesModel[i].type,
                   isGri: true),
-              typeAndDistance(
-                  title: recipiesModel[i].distance,
-                  color: Color(0xff848DFF),
-                  isGri: false),
-              // SizedBox(
-              //   width: Get.width * 0.05,
-              // ),
-              // OverlapAvatar(
-              //     insideRadius: 4,
-              //     outSideRadius: 2,
-              //     widthFactor: 0.5,
-              //     itemCount: 2,
-              //     backgroundImage:
-              //         AssetImage('assets/images/pic1.png'),
-              //     backgroundColor: Colors.white),
               InkWell(
                   onTap: () {
                     showDialog(
@@ -152,7 +143,7 @@ Padding restaurantCardListView(int i, BuildContext context) {
                                               color: kDarkTextColor),
                                         )),
                                     Divider(
-                                      color: Colors.grey,
+                                      color: Colors.grey.withOpacity(0.3),
                                       thickness: 1,
                                     ),
                                     TextButton(
@@ -194,7 +185,8 @@ Padding restaurantCardListView(int i, BuildContext context) {
                                                               Get.height * 0.03,
                                                         ),
                                                         Divider(
-                                                          color: Colors.grey,
+                                                          color: Colors.grey
+                                                              .withOpacity(0.3),
                                                           thickness: 1,
                                                         ),
                                                         Row(
@@ -247,7 +239,7 @@ Padding restaurantCardListView(int i, BuildContext context) {
                                               color: kDarkTextColor)),
                                     ),
                                     Divider(
-                                      color: Colors.grey,
+                                      color: Colors.grey.withOpacity(0.3),
                                       thickness: 1,
                                     ),
                                     TextButton(

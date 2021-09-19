@@ -6,6 +6,7 @@ import 'package:food_bytes/views/categoryScreen/categoryScreen.dart';
 import 'package:food_bytes/views/filterScreen/filterScreen.dart';
 import 'package:food_bytes/views/trendingRestaurants/trendingRestaurants.dart';
 import 'package:food_bytes/widgets/displayTextField.dart';
+import 'package:food_bytes/widgets/gridRecipiesCard.dart';
 import 'package:food_bytes/widgets/restaurentCardListView.dart';
 import 'package:get/get.dart';
 
@@ -23,12 +24,10 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Color(0xffFFFFFF),
-        body: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          child: Container(
-            //  margin: EdgeInsets.symmetric(horizontal: 20),
-            height: Get.height,
-            width: Get.width,
+        body: Container(
+          height: Get.height,
+          width: Get.width,
+          child: SingleChildScrollView(
             child: Column(
               children: [
                 SizedBox(
@@ -55,32 +54,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     labelText: 'Find Restaurant',
                   ),
                 ),
-                SizedBox(
-                  height: Get.height * 0.03,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: InkWell(
-                      onTap: () {
-                        Get.to(() => TrendingRestaurant());
-                      },
-                      child:
-                          customTextRow('Trending Restaurant', 'See all (45)')),
-                ),
-                Container(
-                  margin: EdgeInsets.only(
-                      left: Get.width * 0.02,
-                      top: Get.height * 0.03,
-                      bottom: Get.height * 0.015),
-                  height: Get.height * 0.31,
-                  child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      physics: BouncingScrollPhysics(),
-                      itemCount: recipiesModel.length,
-                      itemBuilder: (context, i) {
-                        return restaurantCardListView(i, context);
-                      }),
-                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: InkWell(
@@ -92,8 +65,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 Container(
                   margin: EdgeInsets.only(
                       left: Get.width * 0.022, top: Get.height * 0.01),
-                  height: Get.height * 0.13,
-                  // width: Get.width * 0.3,
+                  height: Get.height * 0.1,
+                  //width: Get.width * 0.2,
                   child: ListView.builder(
                       itemCount: categoryModel.length,
                       physics: BouncingScrollPhysics(),
@@ -109,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 // color: Colors.black12,
                                 borderRadius: BorderRadius.circular(8)),
                             height: Get.height * 0.13,
-                            width: Get.width * 0.3,
+                            width: Get.width * 0.43,
                             child: Stack(
                               children: [
                                 Container(
@@ -144,28 +117,69 @@ class _HomeScreenState extends State<HomeScreen> {
                         );
                       }),
                 ),
+                SizedBox(
+                  height: Get.height * 0.02,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: InkWell(
+                      onTap: () {
+                        Get.to(() => TrendingRestaurant());
+                      },
+                      child:
+                          customTextRow('Trending Restaurant', 'See all (45)')),
+                ),
+                Container(
+                  margin: EdgeInsets.only(
+                    left: Get.width * 0.02,
+                    top: Get.height * 0.01,
+                  ),
+                  height: Get.height * 0.31,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      physics: BouncingScrollPhysics(),
+                      itemCount: recipiesModel.length,
+                      itemBuilder: (context, i) {
+                        return restaurantCardListView(
+                          i,
+                          context,
+                        );
+                      }),
+                ),
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: customTextRow('Friends', 'See all (9)'),
+                  child: InkWell(
+                      onTap: () {
+                        Get.to(() => TrendingRestaurant());
+                      },
+                      child:
+                          customTextRow('Trending Restaurant', 'See all (45)')),
                 ),
                 Container(
-                  height: Get.height * 0.07,
-                  child: ListView.builder(
-                      physics: BouncingScrollPhysics(),
-                      scrollDirection: Axis.horizontal,
-                      itemCount: avatarModel.length,
-                      itemBuilder: (context, i) {
-                        return Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 15),
-                          child: CircleAvatar(
-                            radius: 28,
-                            backgroundImage: AssetImage(
-                              avatarModel[i],
-                            ),
-                          ),
-                        );
-                      }),
+                  margin: EdgeInsets.only(
+                    left: Get.width * 0.02,
+                    right: Get.width * 0.02,
+                    // top: Get.height * 0.01,
+                    //bottom: Get.height * 0.02,
+                  ),
+                  //  width: Get.width,
+                  // height: Get.height * 0.5,
+                  // height: Get.height,
+                  child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 10,
+                        crossAxisSpacing: 1),
+                    //      scrollDirection: Axis.vertical,
+                    // physics: BouncingScrollPhysics(),
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemCount: recipiesModel.length,
+                    itemBuilder: (context, i) {
+                      return gridRecipesCard(i, context);
+                    },
+                  ),
                 ),
               ],
             ),

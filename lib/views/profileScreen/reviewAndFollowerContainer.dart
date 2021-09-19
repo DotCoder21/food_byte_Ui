@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_bytes/utils/appColors.dart';
 import 'package:food_bytes/utils/appConst.dart';
+import 'package:get/get.dart';
 
 Container reviewAndFollowerContainer(String title, String subtitle) {
   return Container(
@@ -9,12 +10,16 @@ Container reviewAndFollowerContainer(String title, String subtitle) {
         Text(
           title,
           style: kTextStyle.copyWith(
-              color: kBlue, fontSize: 20, fontWeight: FontWeight.bold),
+              color: kBlue,
+              fontSize: Get.height * 0.023,
+              fontWeight: FontWeight.bold),
         ),
         Text(
           subtitle,
           style: kTextStyle.copyWith(
-              color: kTextColor, fontSize: 20, fontWeight: FontWeight.w500),
+              color: kTextColor,
+              fontSize: Get.height * 0.019,
+              fontWeight: FontWeight.w500),
         ),
       ],
     ),

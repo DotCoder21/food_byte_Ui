@@ -41,12 +41,21 @@ class _NotificationScreenState extends State<NotificationScreen> {
                         return Padding(
                           padding: const EdgeInsets.symmetric(vertical: 10),
                           child: ListTile(
-                            leading: CircleAvatar(
-                              backgroundImage: AssetImage(
-                                notificationModel[i].image,
+                            leading: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Container(
+                                child: Image.asset(
+                                  notificationModel[i].image,
+                                  width: Get.width * 0.16,
+                                ),
                               ),
-                              radius: 30,
                             ),
+                            // CircleAvatar(
+                            //   backgroundImage: AssetImage(
+                            //     notificationModel[i].image,
+                            //   ),
+                            //   radius: 30,
+                            // ),
                             title: Text(
                               notificationModel[i].title,
                               style: kTextStyle.copyWith(

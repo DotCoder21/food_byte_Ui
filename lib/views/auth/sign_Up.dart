@@ -19,7 +19,7 @@ class SignUpScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Stack(
       children: [
-        BackgroundImage(image: 'assets/images/register_bg.png'),
+        BackgroundImage(image: 'assets/images/signUpimage.jpg'),
         Scaffold(
           backgroundColor: Colors.transparent,
           body: Container(

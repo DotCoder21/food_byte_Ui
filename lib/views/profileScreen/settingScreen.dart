@@ -105,7 +105,7 @@ class _SettingScreenState extends State<SettingScreen> {
                                   height: Get.height * 0.03,
                                 ),
                                 Divider(
-                                  color: Colors.grey,
+                                  color: Colors.grey.withOpacity(0.3),
                                   thickness: 1,
                                 ),
                                 Row(

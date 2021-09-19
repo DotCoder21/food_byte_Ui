@@ -29,7 +29,7 @@ class _MyFavoriteScreenState extends State<MyFavoriteScreen> {
                 height: Get.height * 0.01,
               ),
               Container(
-                margin: EdgeInsets.only(left: Get.width * 0.02),
+                margin: EdgeInsets.symmetric(horizontal: Get.width * 0.02),
                 height: Get.height * 1,
                 child: ListView.builder(
                     scrollDirection: Axis.vertical,

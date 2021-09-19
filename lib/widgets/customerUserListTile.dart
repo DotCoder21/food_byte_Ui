@@ -8,12 +8,21 @@ Padding userFollowersListTiles(int i, bool isFollower) {
   return Padding(
     padding: const EdgeInsets.symmetric(vertical: 10),
     child: ListTile(
-        leading: CircleAvatar(
-          backgroundImage: AssetImage(
-            notificationModel[i].image,
+        leading: ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: Container(
+            child: Image.asset(
+              notificationModel[i].image,
+              width: Get.width * 0.16,
+            ),
           ),
-          radius: 30,
         ),
+        // CircleAvatar(
+        //   backgroundImage: AssetImage(
+        //     notificationModel[i].image,
+        //   ),
+        //   radius: 30,
+        // ),
         title: Text(
           notificationModel[i].title,
           style: kTextStyle.copyWith(
@@ -52,7 +61,7 @@ Padding userFollowersListTiles(int i, bool isFollower) {
                     borderRadius: BorderRadius.circular(8)),
                 child: Center(
                   child: Text(
-                    'Following',
+                    'Unfollow',
                     style: kTextStyle.copyWith(
                         color: kTextColor,
                         fontSize: Get.height * 0.02,

@@ -330,19 +330,29 @@ class _HomeDetailScreenState extends State<HomeDetailScreen> {
                           height: Get.height * 0.02,
                         ),
                         Container(
-                          height: Get.height,
+                          //  height: Get.height,
                           child: ListView.builder(
                               shrinkWrap: true,
                               physics: NeverScrollableScrollPhysics(),
                               itemCount: customerReviewModel.length,
                               itemBuilder: (context, i) {
                                 return ListTile(
-                                  leading: CircleAvatar(
+                                  leading: ClipRRect(
+                                    borderRadius: BorderRadius.circular(8),
+                                    child: Container(
+                                      child: Image.asset(
+                                        customerReviewModel[i].image,
+                                        width: Get.width * 0.16,
+                                      ),
+                                    ),
+                                  ),
+
+                                  /* CircleAvatar(
                                     radius: 30,
                                     backgroundImage: AssetImage(
                                       customerReviewModel[i].image,
                                     ),
-                                  ),
+                                  ),*/
                                   title: Text(
                                     customerReviewModel[i].name,
                                     style: kTextStyle.copyWith(
