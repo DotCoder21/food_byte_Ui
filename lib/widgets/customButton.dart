@@ -9,8 +9,8 @@ class RoundedButton extends StatelessWidget {
     this.onPress,
   });
 
-  final String buttonName;
-  Function onPress;
+  final String? buttonName;
+  Function? onPress;
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +25,9 @@ class RoundedButton extends StatelessWidget {
       ),
       // ignore: deprecated_member_use
       child: FlatButton(
-        onPressed: () => onPress(),
+        onPressed: () => onPress!(),
         child: Text(
-          buttonName,
+          buttonName!,
           style: kTextStyle.copyWith(
               fontWeight: FontWeight.bold, fontSize: Get.height * 0.026),
         ),

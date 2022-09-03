@@ -45,7 +45,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                               borderRadius: BorderRadius.circular(8),
                               child: Container(
                                 child: Image.asset(
-                                  notificationModel[i].image,
+                                  notificationModel[i].image!,
                                   width: Get.width * 0.16,
                                 ),
                               ),
@@ -57,21 +57,21 @@ class _NotificationScreenState extends State<NotificationScreen> {
                             //   radius: 30,
                             // ),
                             title: Text(
-                              notificationModel[i].title,
+                              notificationModel[i].title!,
                               style: kTextStyle.copyWith(
                                   fontSize: Get.height * 0.02,
                                   fontWeight: FontWeight.bold,
                                   color: kDarkTextColor),
                             ),
                             subtitle: Text(
-                              notificationModel[i].subtitle,
+                              notificationModel[i].subtitle!,
                               style: kTextStyle.copyWith(
                                   fontSize: Get.height * 0.02,
                                   fontWeight: FontWeight.bold,
                                   color: kTextColor),
                             ),
                             trailing: Text(
-                              notificationModel[i].time,
+                              notificationModel[i].time!,
                               style: kTextStyle.copyWith(
                                   fontSize: Get.height * 0.018,
                                   fontWeight: FontWeight.bold,

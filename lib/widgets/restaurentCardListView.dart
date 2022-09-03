@@ -28,7 +28,7 @@ Widget restaurantCardListView(
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: AssetImage(
-                    recipiesModel[i].image,
+                    recipiesModel[i].image!,
                   ),
                 ),
                 //color: Colors.red,
@@ -52,7 +52,7 @@ Widget restaurantCardListView(
                             topLeft: Radius.circular(8))),
                     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                     child: Text(
-                      recipiesModel[i].option,
+                      recipiesModel[i].option!,
                       style: TextStyle(
                           color: Colors.green, fontWeight: FontWeight.w600),
                     ),
@@ -85,7 +85,7 @@ Widget restaurantCardListView(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text(
-                recipiesModel[i].title,
+                recipiesModel[i].title!,
                 style: kTextStyle.copyWith(
                   fontSize: Get.height * 0.02,
                   fontWeight: FontWeight.w900,
@@ -102,7 +102,7 @@ Widget restaurantCardListView(
                     width: Get.width * 0.01,
                   ),
                   Text(
-                    recipiesModel[i].rating,
+                    recipiesModel[i].rating!,
                     style: TextStyle(
                         fontSize: Get.height * 0.014,
                         color: kDarkTextColor,
@@ -265,7 +265,7 @@ Widget restaurantCardListView(
             child: Align(
               alignment: Alignment.topLeft,
               child: Text(
-                recipiesModel[i].subTitle,
+                recipiesModel[i].subTitle!,
                 style: kTextStyle.copyWith(
                   fontSize: Get.height * 0.017,
                   color: kTextColor,

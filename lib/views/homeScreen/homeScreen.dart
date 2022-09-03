@@ -77,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Container(
                             decoration: BoxDecoration(
                                 image: DecorationImage(
-                                    image: AssetImage(categoryModel[i].image),
+                                    image: AssetImage(categoryModel[i].image!),
                                     fit: BoxFit.fill),
                                 // color: Colors.black12,
                                 borderRadius: BorderRadius.circular(8)),
@@ -93,17 +93,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                       gradient: LinearGradient(
                                           colors: [
                                             categoryModel[i]
-                                                .color1
+                                                .color1!
                                                 .withOpacity(0.5),
                                             categoryModel[i]
-                                                .color2
+                                                .color2!
                                                 .withOpacity(0.5)
                                           ],
                                           begin: Alignment.bottomLeft,
                                           end: Alignment.topLeft)),
                                   child: Center(
                                     child: Text(
-                                      categoryModel[i].title,
+                                      categoryModel[i].title!,
                                       style: kTextStyle.copyWith(
                                           color: Colors.white,
                                           fontSize: Get.height * 0.025,

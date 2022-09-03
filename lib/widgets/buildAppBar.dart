@@ -4,10 +4,10 @@ import 'package:food_bytes/utils/appConst.dart';
 import 'package:get/get.dart';
 
 PreferredSize buildAppBar({
-  String title,
-  Color color,
-  IconData actionIcon1,
-  IconData actionIcon2,
+  String? title,
+  Color? color,
+  IconData? actionIcon1,
+  IconData? actionIcon2,
   // String title2,
   // Color titleColor
 }) {
@@ -32,7 +32,7 @@ PreferredSize buildAppBar({
         ),
         centerTitle: true,
         title: Text(
-          title,
+          title!,
           style: kTextStyle.copyWith(
               color: color,
               fontSize: Get.height * 0.028,

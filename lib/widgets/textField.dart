@@ -12,11 +12,11 @@ class TextInputField extends StatelessWidget {
     this.emailController,
   });
 
-  final IconData icon;
-  final String hint;
-  final TextInputType inputType;
-  final TextInputAction inputAction;
-  TextEditingController emailController;
+  final IconData? icon;
+  final String? hint;
+  final TextInputType? inputType;
+  final TextInputAction? inputAction;
+  TextEditingController? emailController;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -26,7 +26,7 @@ class TextInputField extends StatelessWidget {
         height: size.height * 0.08,
         width: size.width * 0.8,
         decoration: BoxDecoration(
-          color: Colors.grey[500].withOpacity(0.5),
+          color: Colors.grey[500]!.withOpacity(0.5),
           borderRadius: BorderRadius.circular(12),
         ),
         child: Center(

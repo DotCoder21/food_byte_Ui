@@ -28,7 +28,7 @@ Padding gridRecipesCard(
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: AssetImage(
-                    recipiesModel[i].image,
+                    recipiesModel[i].image!,
                   ),
                 ),
                 //color: Colors.red,
@@ -51,7 +51,7 @@ Padding gridRecipesCard(
                             BorderRadius.only(bottomRight: Radius.circular(8))),
                     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                     child: Text(
-                      recipiesModel[i].option,
+                      recipiesModel[i].option!,
                       style: TextStyle(
                           color: Colors.green,
                           fontWeight: FontWeight.w600,
@@ -90,7 +90,7 @@ Padding gridRecipesCard(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      recipiesModel[i].title,
+                      recipiesModel[i].title!,
                       style: kTextStyle.copyWith(
                         fontSize: Get.height * 0.012,
                         fontWeight: FontWeight.w900,
@@ -110,7 +110,7 @@ Padding gridRecipesCard(
                           width: Get.width * 0.01,
                         ),
                         Text(
-                          recipiesModel[i].rating,
+                          recipiesModel[i].rating!,
                           style: TextStyle(
                               fontSize: Get.height * 0.012,
                               color: kDarkTextColor,
@@ -123,7 +123,7 @@ Padding gridRecipesCard(
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    recipiesModel[i].subTitle,
+                    recipiesModel[i].subTitle!,
                     style: kTextStyle.copyWith(
                       fontSize: Get.height * 0.01,
                       color: kTextColor,

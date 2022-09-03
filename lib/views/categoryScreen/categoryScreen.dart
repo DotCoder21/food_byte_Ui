@@ -37,16 +37,16 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 child: InkWell(
                   onTap: () {
                     Get.to(() => ItemCategories(
-                          categoryModel[i].image,
-                          categoryModel[i].color1,
-                          categoryModel[i].color2,
-                          categoryModel[i].title,
+                          categoryModel[i].image!,
+                          categoryModel[i].color1!,
+                          categoryModel[i].color2!,
+                          categoryModel[i].title!,
                         ));
                   },
                   child: Container(
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage(categoryModel[i].image),
+                            image: AssetImage(categoryModel[i].image!),
                             fit: BoxFit.cover),
                         // color: Colors.black12,
                         borderRadius: BorderRadius.circular(8)),
@@ -61,14 +61,14 @@ class _CategoryScreenState extends State<CategoryScreen> {
                               borderRadius: BorderRadius.circular(8),
                               gradient: LinearGradient(
                                   colors: [
-                                    categoryModel[i].color1.withOpacity(0.5),
-                                    categoryModel[i].color2.withOpacity(0.5)
+                                    categoryModel[i].color1!.withOpacity(0.5),
+                                    categoryModel[i].color2!.withOpacity(0.5)
                                   ],
                                   begin: Alignment.bottomLeft,
                                   end: Alignment.topLeft)),
                           child: Center(
                             child: Text(
-                              categoryModel[i].title,
+                              categoryModel[i].title!,
                               style: kTextStyle.copyWith(
                                   color: Colors.white,
                                   fontSize: Get.height * 0.035,

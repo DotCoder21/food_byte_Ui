@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Button extends StatelessWidget {
-  String buttonText;
-  Color buttonColor;
-  VoidCallback onTap;
+  String? buttonText;
+  Color? buttonColor;
+  VoidCallback? onTap;
   // TextStyle buttonTextStyle;
-  double widthPercent;
-  Color textColor;
+  double? widthPercent;
+  Color? textColor;
 
   Button(
       {this.buttonText,
@@ -15,13 +15,13 @@ class Button extends StatelessWidget {
       this.onTap,
       this.textColor,
       this.widthPercent});
-  double width, height;
+  double? width, height;
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 2),
       child: SizedBox(
-        width: Get.width * widthPercent,
+        width: Get.width * widthPercent!,
         child: MaterialButton(
           onPressed: onTap,
           color: buttonColor,
@@ -32,7 +32,7 @@ class Button extends StatelessWidget {
           // minWidth: width * widthPercent,
           height: 55,
           child: Text(
-            buttonText,
+            buttonText!,
             style: TextStyle(
                 color: textColor,
                 fontSize: 18,

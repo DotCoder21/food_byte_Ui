@@ -40,7 +40,7 @@ class SignUpScreen extends StatelessWidget {
                             filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
                             child: CircleAvatar(
                               radius: size.width * 0.14,
-                              backgroundColor: Colors.grey[400].withOpacity(
+                              backgroundColor: Colors.grey[400]?.withOpacity(
                                 0.4,
                               ),
                               child: Icon(

@@ -5,7 +5,7 @@ class BackgroundImage extends StatelessWidget {
     this.image,
   });
 
-  final String image;
+  final String? image;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class BackgroundImage extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(image),
+            image: AssetImage(image!),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(Colors.black12, BlendMode.darken),
           ),

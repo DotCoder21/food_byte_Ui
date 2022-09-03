@@ -4,16 +4,16 @@ import 'package:food_bytes/utils/appConst.dart';
 import 'package:get/get.dart';
 
 Widget displayTextField({
-  String labelText,
-  Function validaterHandler,
-  Function savedHandler,
+  String? labelText,
+  Function? validaterHandler,
+  Function? savedHandler,
   bool obsecureText = false,
-  TextInputType keyboardType,
-  TextEditingController controller,
+  TextInputType? keyboardType,
+  TextEditingController? controller,
   bool disabled = false,
-  Widget suffixIcon,
-  Widget prefixIcon,
-  Widget hintStyles,
+  Widget? suffixIcon,
+  Widget? prefixIcon,
+  Widget? hintStyles,
 }) {
   return TextFormField(
     style: TextStyle(color: Colors.black),
@@ -37,8 +37,8 @@ Widget displayTextField({
     ),
     controller: controller,
     obscureText: obsecureText,
-    validator: validaterHandler,
-    onSaved: savedHandler,
+    // validator: validaterHandler,
+    // onSaved: savedHandler,
     keyboardType: keyboardType,
   );
 }

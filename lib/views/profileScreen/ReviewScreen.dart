@@ -31,7 +31,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                       borderRadius: BorderRadius.circular(8),
                       child: Container(
                         child: Image.asset(
-                          reviewModel[i].image,
+                          reviewModel[i].image!,
                           width: Get.width * 0.16,
                         ),
                       ),
@@ -43,14 +43,14 @@ class _ReviewScreenState extends State<ReviewScreen> {
                     //   radius: 30,
                     // ),
                     title: Text(
-                      reviewModel[i].name,
+                      reviewModel[i].name!,
                       style: kTextStyle.copyWith(
                           fontSize: Get.height * 0.02,
                           fontWeight: FontWeight.bold,
                           color: kDarkTextColor),
                     ),
                     subtitle: Text(
-                      reviewModel[i].title,
+                      reviewModel[i].title!,
                       style: kTextStyle.copyWith(
                           fontSize: Get.height * 0.02,
                           fontWeight: FontWeight.bold,
@@ -58,7 +58,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                     ),
                     trailing: Container(
                         width: Get.width * 0.16,
-                        child: ratingContainer(reviewModel[i].rating)),
+                        child: ratingContainer(reviewModel[i].rating!)),
                   ),
                 ),
               );

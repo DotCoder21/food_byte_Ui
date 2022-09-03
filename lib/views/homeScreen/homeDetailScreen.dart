@@ -277,7 +277,7 @@ class _HomeDetailScreenState extends State<HomeDetailScreen> {
                           child: Container(
                             decoration: BoxDecoration(
                                 image: DecorationImage(
-                                    image: AssetImage(categoryModel[i].image),
+                                    image: AssetImage(categoryModel[i].image!),
                                     fit: BoxFit.fill),
                                 // color: Colors.black12,
                                 borderRadius: BorderRadius.circular(8)),
@@ -341,7 +341,7 @@ class _HomeDetailScreenState extends State<HomeDetailScreen> {
                                     borderRadius: BorderRadius.circular(8),
                                     child: Container(
                                       child: Image.asset(
-                                        customerReviewModel[i].image,
+                                        customerReviewModel[i].image!,
                                         width: Get.width * 0.16,
                                       ),
                                     ),
@@ -354,14 +354,14 @@ class _HomeDetailScreenState extends State<HomeDetailScreen> {
                                     ),
                                   ),*/
                                   title: Text(
-                                    customerReviewModel[i].name,
+                                    customerReviewModel[i].name!,
                                     style: kTextStyle.copyWith(
                                         fontSize: Get.height * 0.018,
                                         color: Colors.black,
                                         fontWeight: FontWeight.w600),
                                   ),
                                   subtitle: Text(
-                                    customerReviewModel[i].title,
+                                    customerReviewModel[i].title!,
                                     style: kTextStyle.copyWith(
                                         fontSize: Get.height * 0.02,
                                         color: kTextColor,
@@ -372,7 +372,7 @@ class _HomeDetailScreenState extends State<HomeDetailScreen> {
                                     child: Container(
                                         width: Get.width * 0.16,
                                         child: ratingContainer(
-                                            customerReviewModel[i].rating)),
+                                            customerReviewModel[i].rating!)),
                                   ),
                                 );
                               }),
